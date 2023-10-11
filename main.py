@@ -7,12 +7,12 @@ from streamlit_calendar import calendar
 from google.oauth2 import service_account
 
 # Authenticate to Firestore with the JSON account key.
-# db = firestore.Client.from_service_account_json("ata-firestore-key.json")
+db = firestore.Client.from_service_account_json("ata-firestore-key-dashboard.json")
 
 
-key_dict = json.loads(st.secrets["textkey"])
-creds = service_account.Credentials.from_service_account_info(key_dict)
-db = firestore.Client(credentials=creds)
+# key_dict = json.loads(st.secrets["textkey"])
+# creds = service_account.Credentials.from_service_account_info(key_dict)
+# db = firestore.Client(credentials=creds)
 
 st.set_page_config(layout="centered")
 
