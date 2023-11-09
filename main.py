@@ -41,8 +41,8 @@ st.sidebar.subheader("Overall Progress")
 st.sidebar.metric("Total Number of Projects", total_projects)
 for proj in projects:
     project_data = proj.to_dict()
-    total_completed_tasks += project_data.get("num_completed_tasks")
-    total_num_tasks += project_data.get("num_tasks")
+    total_completed_tasks += project_data.get("num_completed_tasks",0)
+    total_num_tasks += project_data.get("num_tasks",0)
 
 # Calculate delta
 delta = total_num_tasks - total_completed_tasks
